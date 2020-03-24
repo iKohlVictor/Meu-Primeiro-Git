@@ -8,6 +8,7 @@ public class Principal
     public static void main(String[] args) 
     {
         ArrayList<Imovel> listaImoveis = new ArrayList();
+        ContabilizaArea contabilizaArea = new ContabilizaArea();
         Apartamento apartamento;
         Casa casa;
         Comercial comercial;
@@ -16,13 +17,14 @@ public class Principal
         
         opc1 = opc2 = 0;
         
-        while(opc1 != 4)
+        while(opc1 != 5)
         {
             System.out.print("\n ----MENU----");
             System.out.print("\n 1 - Inserir:");
             System.out.print("\n 2 - Mostrar:");
             System.out.print("\n 3 - Mostrar tudo:");
-            System.out.print("\n 4 - Sair \n ->");
+            System.out.print("\n 4 - Contabilizar Area Total:");
+            System.out.print("\n 5 - Sair \n ->");
             opc1 = entrada.nextInt();
             
             switch(opc1)
@@ -113,6 +115,11 @@ public class Principal
                         System.out.print("\n -> " + listaImoveis.get(i).getClass().getSimpleName()
                                 + ":"+listaImoveis.get(i).toString());
                     }
+                break;
+                    
+                case 4:
+                    System.out.print("\n A área total é:" 
+                            + contabilizaArea.contabilizaAreaTotal(listaImoveis));
                 break;
             }
         }
